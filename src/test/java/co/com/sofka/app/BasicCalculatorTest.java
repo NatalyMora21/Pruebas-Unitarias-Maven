@@ -1,5 +1,7 @@
-package co.com.sofka.app.calculator;
+package co.com.sofka.app;
 
+import co.com.sofka.app.calculator.BasicCalculator;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -16,7 +18,7 @@ public class BasicCalculatorTest {
             "1,  100, 101"
     })
     public void severalSums(Long first, Long second, Long expectedResult) {
-        assertEquals(expectedResult, BasicCalculator.sum(first, second));
+        Assertions.assertEquals(expectedResult, BasicCalculator.sum(first, second));
     }
 
     @DisplayName("Testing several subtraction")
@@ -43,7 +45,7 @@ public class BasicCalculatorTest {
         assertEquals(expectedResult, BasicCalculator.multiplication(first, second));
     }
 
-    @DisplayName("Testing several multiplication")
+    @DisplayName("Testing several division")
     @ParameterizedTest(name = "{0} / {1} = {2}")
     @CsvSource({
             "100,    1,   100",
